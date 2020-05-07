@@ -12,8 +12,7 @@ const server = new GraphQLServer({
   resolvers,
   resolverValidationOptions: {
     requireResolversForResolveType: false
-  },  
-  introspection: true,
+  }
   context: req => ({ ...req, models })
 });
 
