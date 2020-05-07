@@ -33,5 +33,5 @@ server.start(
       origin: process.env.FRONTEND_URL
     }
   },
-  result => console.log(`up and running on http://localhost:${result.port}`)
+  result => console.log(`up and running`)
 );
