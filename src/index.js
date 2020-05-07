@@ -22,7 +22,6 @@ server.express.use(async (req, res, next) => {
   if (token) {
     const user = await jwt.verify(token, process.env.JWT_SECRET);
     req.user = user;
-    // console.log(user);
   }
   next();
 });
