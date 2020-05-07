@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "dotenv": "^8.2.0",
+    "graphql-yoga": "^1.18.3",
+    "jsonwebtoken": "^8.5.1",
+    "marked": "^1.0.0",
+    "md5": "^2.2.1",
+    "mongoose": "^5.9.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
