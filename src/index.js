@@ -16,6 +16,15 @@ const server = new GraphQLServer({
   context: req => ({ ...req, models })
 });
 
+server.express.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:7777');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
+
 server.express.use(async (req, res, next) => {
   const token = req.headers.authorization;
 
@@ -30,10 +39,7 @@ server.start(
   {
     cors: {
       credentials: true,
-      origin: [process.env.FRONTEND_URL],
-      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-      preflightContinue: false,
-      optionsSuccessStatus: 204
+      origin: [process.env.FRONTEND_URL]
     }
   },
   server => {
