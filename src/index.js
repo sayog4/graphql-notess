@@ -30,8 +30,13 @@ server.start(
   {
     cors: {
       credentials: true,
-      origin: process.env.FRONTEND_URL
+      origin: [process.env.FRONTEND_URL],
+      methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+      preflightContinue: false,
+      optionsSuccessStatus: 204
     }
   },
-  result => console.log(`up and running`)
+  server => {
+    console.log(`Server is running on http://localhost/${server.port}`);
+  }
 );
